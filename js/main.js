@@ -3,17 +3,17 @@
 window. addEventListener("contextmenu", e => e. preventDefault());
 //consts
 const SIZE = 8 
-const MINE = `<img src="Img/64x64/bomb.png" class="img"></img>`
+const MINE = `<img src="/MineSweepers/Img/64x64/bomb.png" class="img"></img>`
 
-const EMPTY = `<img src="../Img/64x64/empty.png" class="img"></img>`
-const ZERO = `<img src="../Img/64x64/empty.png" class="img"></img>`
-const ONE = `<img src="../Img/64x64/1.png" class="img"></img>`
-const TWO = `<img src="../Img/64x64/2.png" class="img"></img>`
-const THREE = `<img src="../Img/64x64/3.png" class="img"></img>`
-const FOUR = `<img src="../Img/64x64/4.png" class="img"></img>`
-const FIVE = `<img src="../Img/64x64/5.png" class="img"></img>`
-const SIX = `<img src="../Img/64x64/6.png" class="img"></img>`
-const FLAG = `<img src="../Img/64x64/flag.png" class="img"></img>`
+const EMPTY = `<img src="/MineSweepers/Img/64x64/empty.png" class="img"></img>`
+const ZERO = `<img src="/MineSweepers/Img/64x64/empty.png" class="img"></img>`
+const ONE = `<img src="/MineSweepers/Img/64x64/1.png" class="img"></img>`
+const TWO = `<img src="/MineSweepers/Img/64x64/2.png" class="img"></img>`
+const THREE = `<img src="/MineSweepers/Img/64x64/3.png" class="img"></img>`
+const FOUR = `<img src="/MineSweepers/Img/64x64/4.png" class="img"></img>`
+const FIVE = `<img src="/MineSweepers/Img/64x64/5.png" class="img"></img>`
+const SIX = `<img src="/MineSweepers/Img/64x64/6.png" class="img"></img>`
+const FLAG = `<img src="/MineSweepers/Img/64x64/flag.png" class="img"></img>`
 
 
 
