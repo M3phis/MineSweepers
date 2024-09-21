@@ -3,7 +3,8 @@
 window. addEventListener("contextmenu", e => e. preventDefault());
 //consts
 const SIZE = 8 
-const MINE = `<img src="../Img/64x64/bomb.png" class="img"></img>`
+const MINE = `<img src="../../Com/MineSweeper/Img/64x64/bomb.png" class="img"></img>`
+
 const EMPTY = `<img src="../Img/64x64/empty.png" class="img"></img>`
 const ZERO = `<img src="../Img/64x64/empty.png" class="img"></img>`
 const ONE = `<img src="../Img/64x64/1.png" class="img"></img>`
