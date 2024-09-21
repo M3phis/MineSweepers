@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+tr{
+    padding: 1px 0px 0px 0px;
+    height: 12px;
+}
+
+td{
+    height: 12px;
+}
+
+
+.cell {
+    width: 12px;
+    height: 12px;
+    padding: 0%;
+    /* border: 2px solid green; */
+}
+
+.img {
+    padding: 0 0 0 0;
+    width: 100%;
+    height: 100%;   
+}
