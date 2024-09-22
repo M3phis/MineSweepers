@@ -2,24 +2,23 @@
 
 window. addEventListener("contextmenu", e => e. preventDefault());
 //consts
-const SIZE = 8 
-const MINE = `<img src="/MineSweepers/Img/64x64/bomb.png" class="img"></img>`
-
-const EMPTY = `<img src="/MineSweepers/Img/64x64/empty.png" class="img"></img>`
-const ZERO = `<img src="/MineSweepers/Img/64x64/empty.png" class="img"></img>`
-const ONE = `<img src="/MineSweepers/Img/64x64/1.png" class="img"></img>`
-const TWO = `<img src="/MineSweepers/Img/64x64/2.png" class="img"></img>`
-const THREE = `<img src="/MineSweepers/Img/64x64/3.png" class="img"></img>`
-const FOUR = `<img src="/MineSweepers/Img/64x64/4.png" class="img"></img>`
-const FIVE = `<img src="/MineSweepers/Img/64x64/5.png" class="img"></img>`
-const SIX = `<img src="/MineSweepers/Img/64x64/6.png" class="img"></img>`
-const FLAG = `<img src="/MineSweepers/Img/64x64/flag.png" class="img"></img>`
+var SIZE = 4 
+const MINE = `<img src="Img/64x64/bomb.png" class="img"></img>`
+const EMPTY = `<img src="Img/64x64/unchecked.png" class="img"></img>`
+const ZERO = `<img src="Img/64x64/empty.png" class="img"></img>`
+const ONE = `<img src="Img/64x64/1.png" class="img"></img>`
+const TWO = `<img src="Img/64x64/2.png" class="img"></img>`
+const THREE = `<img src="Img/64x64/3.png" class="img"></img>`
+const FOUR = `<img src="Img/64x64/4.png" class="img"></img>`
+const FIVE = `<img src="Img/64x64/5.png" class="img"></img>`
+const SIX = `<img src="Img/64x64/6.png" class="img"></img>`
+const FLAG = `<img src="Img/64x64/flag.png" class="img"></img>`
 
 
 
 //global vars
 var gBoard;
-var gLevel; 
+
 var gLevel = {
     size: SIZE,
     mines: 2
@@ -64,7 +63,6 @@ function buildBoard(){
            //console.log(board[i][j])
         }        
     }
-   setMines(SIZE * 2,board)
 
     return board
 }
@@ -97,7 +95,9 @@ function renderBoard(board){
 
 function onInit(){
     gBoard = buildBoard()
+    setMines(gLevel.mines,gBoard)
     setMinesNegsCount(gBoard)
+
     renderBoard(gBoard)
     console.table(gBoard)
     console.log(gBoard)
@@ -119,6 +119,12 @@ function setMinesNegsCount(board){
 
 
 function onCellClicked(elCell,i , j){
+
+
+    //first click
+
+    //set mines, not on this location
+    //count blash
     const cell =  gBoard[i][j]
 
 if (!cell.isShown && !cell.minesAround && !cell.isMine ){
@@ -178,7 +184,7 @@ function getNumberPic(num){
 
     switch (num) {
         case 0:
-            return EMPTY
+            return ZERO
         case 1:
             return ONE
             break;
@@ -294,4 +300,26 @@ function setRandomMine(board){
     const cell =  board[randomI][randomJ]
     cell.isMine = true
 
+}
+
+
+function setDiff(num){
+
+    if (num === 1){
+        gLevel.mines = 2
+        SIZE = 4
+    }
+
+    else if(num ===2 ){
+        gLevel.mines = 14
+        SIZE = 8
+
+    }
+
+    else {
+        gLevel.mines = 32
+        SIZE = 12
+    }
+
+    onInit()
 }
