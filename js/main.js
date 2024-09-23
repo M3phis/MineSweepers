@@ -18,7 +18,8 @@ const FLAG = `<img src="Img/64x64/flag.png" class="img"></img>`
 
 //global vars
 var gBoard;
-
+var gFlaggedMines = 0
+var gShownCells = 0
 var gLevel = {
     size: SIZE,
     mines: 2
@@ -120,7 +121,7 @@ function setMinesNegsCount(board){
 
 function onCellClicked(elCell,i , j){
 
-
+    if (checkVictory()) gameOver()
     //first click
 
     //set mines, not on this location
@@ -152,6 +153,8 @@ if (!cell.isShown && !cell.minesAround && !cell.isMine ){
     //update DOM
     if (!cell.isMine) renderCell({i,j},getNumberPic(cell.minesAround))
     else elCell.innerHTML = MINE
+
+    if (checkVictory()) gameOver()
 }
 
 function onCellMarked(elCell,i,j){
@@ -208,20 +211,12 @@ function renderCell(location, value) {
     elCell.innerHTML = value
 }
 
-function gameOver(){
+function gameOver(win){
 
+    if (!win)  loseGame()
+    else winGame()
+    
     //change smiley to sad
-
-    // show all mines
-    for (let i = 0; i < gBoard.length; i++) {
-        for (let j = 0; j < gBoard.length; j++) {
-            if (gBoard[i][j].isMine ){
-                gBoard[i][j].isShown = true
-                renderCell({i,j},MINE)
-            }           
-        }        
-    }
-
 
 }
 
@@ -322,4 +317,36 @@ function setDiff(num){
     }
 
     onInit()
+}
+
+
+function checkVictory(){
+    return (gFlaggedMines + gShownCells) === SIZE * SIZE
+}
+
+
+function winGame(){
+    //stop timer
+    //win module
+    //
+    //emoji 
+    console.log("You win")
+    gGame.isOn = false;
+}
+
+
+function loseGame(){
+    //reveal mines
+
+    for (let i = 0; i < gBoard.length; i++) {
+        for (let j = 0; j < gBoard.length; j++) {
+            if (gBoard[i][j].isMine ){
+                gBoard[i][j].isShown = true
+                renderCell({i,j},MINE)
+            }           
+        }        
+    }
+    console.log("You lose")
+    gGame.isOn = false;
+
 }
