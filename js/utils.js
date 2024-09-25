@@ -58,3 +58,63 @@ function playSound(sound) {
 function getCellClass(i,j){
     return `cell-${i}-${j}`
 }
+
+
+function getEmptyLocationArr(mat){
+    var newMat = []
+
+    for (let i = 0; i < mat.length; i++) {
+        for (let j = 0; j < mat[0].length; j++) {
+            newMat.push({j:j,i:i})
+        }        
+    }
+
+    return newMat
+}
+
+function shuffleArray(array) {
+    console.log("shuffling")
+    for (var i = array.length - 1; i >= 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+
+
+function startTimer(){
+    let startTime = Date.now()
+    let time = '00:00:000'
+    const elTimerText = document.querySelector('.timerText')
+    clearInterval(gTimeInterval)
+
+    gTimeInterval =  setInterval(()=>{
+    let delta =  Date.now() - startTime 
+    time = formatTime(delta)
+    elTimerText.innerText = time
+
+    },31)
+}
+
+
+function formatTime(ms){
+    
+    let sec = String(Math.floor((ms % 60000) / 1000)).padStart(2,'0')
+    let min = String(Math.floor(ms / 60000)).padStart(2,'0')
+
+
+
+ return `00:${min}:${sec}`
+}
+//console.log(formatTime(12451))
+
+function stopTimer(){
+    clearInterval(gTimeInterval)
+}
+
+function clearTimer(){
+    const elTimerText = document.querySelector('.timerText')
+    elTimerText.innerText = '00:00:00'
+}

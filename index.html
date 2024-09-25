@@ -22,6 +22,17 @@
             Hard
         </button>
     </div>
+    <div>
+        <button class="smiley" onclick="onInit()"></button>
+    </div>
+
+    <section class="hints">
+        <div class="hint" onclick="useHint(this)">💡</div>
+        <div class="hint" onclick="useHint(this)">💡</div>
+        <div class="hint" onclick="useHint(this)">💡</div>
+    </section>
+
+    <div class="lives">Lives: <span></span></div>
     
     <table class="board">
         <tbody class="container">
@@ -30,7 +41,11 @@
     </table>
 
 
-
+    <div class="timerText">
+        00:00:00
+    </div>
+    
+    
 
     <footer>Tomer Almog</footer>
     <script src="js/utils.js"></script>
