@@ -1,5 +1,6 @@
 
 .diffBtns {
+    margin-bottom: 10px;
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
@@ -11,7 +12,12 @@
 }
 
 body {
-    
+  zoom: 2; /* Scale the whole page by 1.5 */
+ background-image: url('../Img/64x64/light.jpg');
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
  text-align: center;
  align-items: center;
 }
@@ -50,7 +56,7 @@ td {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    background-color: gray;
+    background-color: gainsboro;
    
     
 }
@@ -59,7 +65,59 @@ td {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
     display:flex;
     /* width: 33%;
     display: flex; */
+}
+
+.safeClicks{
+    background-color: gainsboro;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px;
+    margin-bottom: 10px;
+    border: 2px solid black
+    
+}
+
+.undo{
+    margin: 10px;
+}
+
+
+.manualModal {
+
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    background-color: gainsboro;
+  
+}
+
+.manualModal span{
+    color:red
+}
+
+.hidden {
+    display:none;
+}
+
+.darkMode{
+    background-image: url('../Img/64x64/darkBackground.jpg');
+    background-color: darkblue;
+    color:darkgray
+
+}
+
+.darkModeBtns {
+    background-color: lightcyan;
+}
+
+button {
+    border-radius: 20%;
+    background-color: darkgray;
+    
 }

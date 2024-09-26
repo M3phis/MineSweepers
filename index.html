@@ -8,7 +8,6 @@
 </head>
 <body onload="onInit()">
 
-
     <div class="diffBtns">
         <button onclick="setDiff(1)">
             Eazy
@@ -21,16 +20,24 @@
         <button onclick="setDiff(3)">
             Hard
         </button>
+        <button class="darkModeBtn" onclick="enterDarkMode()">Dark Mode</button>
     </div>
     <div>
         <button class="smiley" onclick="onInit()"></button>
+        <button onclick="manualMode()" class="manual">Manual Placement</button>
     </div>
+
+    <div class="manualModal">Mines left to place: <span>2</span></div>
 
     <section class="hints">
         <div class="hint" onclick="useHint(this)">💡</div>
         <div class="hint" onclick="useHint(this)">💡</div>
         <div class="hint" onclick="useHint(this)">💡</div>
     </section>
+
+    <section class="safeClicks">
+        <button onclick="safeClick()" class="safeClick">Safe Click</button>
+       <div><span>3</span> clicks available</div></section>
 
     <div class="lives">Lives: <span></span></div>
     
@@ -44,11 +51,14 @@
     <div class="timerText">
         00:00:00
     </div>
+
+    <button onclick="undo()" class="undo">Undo</button>
     
     
 
     <footer>Tomer Almog</footer>
     <script src="js/utils.js"></script>
+    <script src="js/features.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
