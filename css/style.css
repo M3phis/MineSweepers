@@ -13,7 +13,7 @@
 
 body {
   zoom: 2; /* Scale the whole page by 1.5 */
- background-image: url('../Img/64x64/light.jpg');
+ background-image: url('../Img/64x64/lightmode.png');
  background-size: cover;
  background-position: center;
  background-repeat: no-repeat;
@@ -106,9 +106,9 @@ td {
 }
 
 .darkMode{
-    background-image: url('../Img/64x64/darkBackground.jpg');
+    background-image: url('../Img/64x64/darkmode.png');
     background-color: darkblue;
-    color:darkgray
+    /* color:darkgray */
 
 }
 
@@ -120,4 +120,30 @@ button {
     border-radius: 20%;
     background-color: darkgray;
     
+}
+
+.scoreText {
+    border: 1px solid black;
+    max-width: fit-content;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkgray;
+}
+
+ .scoreText {
+  color: red;
+}
+
+.lives {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    background-color: darkgray;
+    color:red;
+}
+
+footer {
+    margin-top: 5%;
 }
