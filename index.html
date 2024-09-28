@@ -25,8 +25,6 @@
     <div>
         <button class="smiley" onclick="onInit()"></button>
         <button onclick="manualMode()" class="manual">Manual Placement</button>
-        <button onclick="exterminateMines(this)" class="Ext">Exterminate</button>
-        <div class="scoreText">High Score: <span></span> seconds</div>
     </div>
 
     <div class="manualModal">Mines left to place: <span>2</span></div>
@@ -35,7 +33,6 @@
         <div class="hint" onclick="useHint(this)">💡</div>
         <div class="hint" onclick="useHint(this)">💡</div>
         <div class="hint" onclick="useHint(this)">💡</div>
-        <button onclick="activateMegaHint(this)" class="megaHint">Mega Hint</button>
     </section>
 
     <section class="safeClicks">
@@ -55,18 +52,13 @@
         00:00:00
     </div>
 
-    <button onclick="undo2()" class="undo">Undo</button>
+    <button onclick="undo()" class="undo">Undo</button>
     
     
 
     <footer>Tomer Almog</footer>
-    <script src="js/main.js"></script>
-
     <script src="js/utils.js"></script>
     <script src="js/features.js"></script>
-    <script src="js/gameIO.js"></script>
-    <script src="js/gameUI.js"></script>
-    <script src="js/boardOperations.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

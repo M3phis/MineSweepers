@@ -121,20 +121,3 @@ button {
     background-color: darkgray;
     
 }
-
-.scoreText {
-    border: 1px solid black;
-    max-width: fit-content;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: darkgray;
-}
-
- .scoreText {
-  color: red;
-}
-
-.lives {
-    color:red
-}
